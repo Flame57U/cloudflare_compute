@@ -1,0 +1,4 @@
+# Copy to /etc/pgbouncer/userlist.txt and replace with your own SCRAM verifier.
+# Get it from PostgreSQL: SELECT rolname, rolpassword FROM pg_authid WHERE rolname=:user;
+# Format: "username" "SCRAM-SHA-256$<iter>:<salt>$<StoredKey>:<ServerKey>"
+"yongjj" "SCRAM-SHA-256$4096:<REDACTED-SALT>$<REDACTED-STOREDKEY>:<REDACTED-SERVERKEY>"
