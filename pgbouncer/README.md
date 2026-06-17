@@ -1,5 +1,4 @@
-# PgBouncer config (QuantSaaS / VPS 31.97.13.54)
-
+# PgBouncer config
 Connection pooler in front of PostgreSQL 16. Sits on `:6432`, pools to the local
 Postgres backend on `127.0.0.1:5432`.
 
