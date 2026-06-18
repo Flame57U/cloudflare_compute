@@ -1,0 +1,19 @@
+[Unit]
+Description=Obsidian Vault Reader (FastAPI)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=yong
+Group=yong
+WorkingDirectory=/home/yong/vault-reader
+Environment="OBSIDIAN_VAULT_PATH=/root/obsidian-vault"
+ExecStart=/home/yong/vault-reader/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8765
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

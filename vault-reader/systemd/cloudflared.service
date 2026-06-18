@@ -1,0 +1,16 @@
+[Unit]
+Description=Cloudflare Tunnel for Vault Reader
+After=network-online.target vault-reader.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/cloudflared tunnel --no-autoupdate run vault-reader
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
